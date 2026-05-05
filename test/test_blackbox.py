@@ -1,12 +1,12 @@
-from plover_build_utils.testing import BlackboxTester
+from plover_build_utils.testing import blackbox_test
 from plover.registry import registry
 from plover import system
 
-class TestsBlackbox(BlackboxTester):
+@blackbox_test
+class TestsBlackbox:
 
     @classmethod
     def setup_class(cls):
-        super().setup_class()
         registry.update()
         system.setup('English Stenotype')
 
